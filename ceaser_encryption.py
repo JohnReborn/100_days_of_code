@@ -24,7 +24,7 @@ def caesar(original_text,shift_amount,crpyt):
           output_text += alphabet[shift_position] #gets the index user shifted too
     
 print(f" here is the {crypt} results: {output_text}")
-
+#test 
 caesar(original_text=text, shift_amount=shift, crpyt=direction)
 
          
