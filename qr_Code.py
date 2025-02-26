@@ -1,9 +1,15 @@
 import qrcode 
 
-mycode = qrcode.make("https://www.youtube.com/watch?v=XWF74wsUaLQ")
 
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=4,
+)
 
-mycode.make_image(fill_color = 'black',
-                  back_color = 'green')
-mrcode.save("surpriseQR.png",scale = 8)
+qr.add_data("https://www.youtube.com/watch?v=XWF74wsUaLQ")
+qr.make(fit=True)
 
+img = qr.make_image(fill_color="black", back_color="green")
+img.save("surpriseQR.png")
